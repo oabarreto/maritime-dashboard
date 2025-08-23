@@ -1,36 +1,138 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌊 Maritime Dashboard
 
-## Getting Started
+Um dashboard moderno para monitoramento marítimo em tempo real, desenvolvido com Next.js, TypeScript e Tailwind CSS.
 
-First, run the development server:
+## 🎯 Sobre o Projeto
+
+Dashboard de demonstração para monitoramento de embarcações e condições oceânicas, criado como projeto showcase para posição de **Frontend Developer Pleno** na **Oceanpact**.
+
+### ✨ Características Principais
+
+- **Monitoramento em Tempo Real**: Acompanhamento de embarcações com dados simulados
+- **Mapas Interativos**: Visualização de posições usando Leaflet
+- **Alertas Inteligentes**: Sistema de notificações por criticidade
+- **Telemetria Avançada**: Gráficos de temperatura, combustível e velocidade
+- **Design Responsivo**: Interface otimizada para desktop e mobile
+- **TypeScript**: Código type-safe e manutenível
+
+## 🚀 Tecnologias
+
+- **Frontend**: Next.js 15 + TypeScript
+- **Estilização**: Tailwind CSS
+- **Mapas**: React-Leaflet
+- **Gráficos**: Recharts
+- **Ícones**: Lucide React
+- **Datas**: date-fns
+- **Deploy**: Vercel
+
+## 📦 Instalação e Execução
 
 ```bash
+# Clone o repositório
+git clone https://github.com/seu-usuario/maritime-dashboard.git
+
+# Entre no diretório
+cd maritime-dashboard
+
+# Instale as dependências
+npm install
+
+# Execute o projeto
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+O projeto estará disponível em `http://localhost:3000`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🏗️ Estrutura do Projeto
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
+├── app/                 # Pages do Next.js App Router
+├── components/          # Componentes React reutilizáveis
+│   ├── Map.tsx         # Mapa interativo com embarcações
+│   ├── AlertPanel.tsx  # Painel de alertas
+│   └── TelemetryChart.tsx # Gráficos de telemetria
+├── data/               # Dados simulados
+│   └── ships.json      # Embarcações, telemetria e alertas
+├── hooks/              # Custom React Hooks
+│   └── useMaritimeData.ts # Hook para gerenciar dados marítimos
+├── lib/                # Utilitários
+│   └── utils.ts        # Funções auxiliares
+└── types/              # Definições TypeScript
+    └── maritime.ts     # Tipos para dados marítimos
+```
 
-## Learn More
+## 🔧 Scripts Disponíveis
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run dev          # Servidor de desenvolvimento
+npm run build        # Build de produção
+npm run start        # Servidor de produção
+npm run lint         # Verificação de código
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📊 Funcionalidades Planejadas
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 🗺️ Mapa Interativo
 
-## Deploy on Vercel
+- Visualização de embarcações em tempo real
+- Markers coloridos por status (ativo, crítico, aviso, manutenção)
+- Popups com informações detalhadas
+- Controles de zoom e navegação
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 🚨 Sistema de Alertas
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Classificação por criticidade (crítico, aviso, info)
+- Filtragem por tipo e status
+- Timestamps e descrições detalhadas
+- Badge indicators por prioridade
+
+### 📈 Telemetria
+
+- Gráficos de temperatura do motor
+- Monitoramento de combustível
+- Histórico de velocidade
+- Seleção de período temporal
+
+### 🎛️ Dashboard Principal
+
+- Overview consolidado de todas as embarcações
+- Estatísticas em tempo real
+- Interface responsiva e intuitiva
+- Tema moderno com Tailwind CSS
+
+## 🔄 Dados Simulados
+
+O projeto utiliza dados fictícios para demonstração:
+
+- **5 embarcações** com diferentes tipos e status
+- **Telemetria** com histórico de 2 horas
+- **Alertas** de diferentes criticidades
+- **Dados meteorológicos** para principais portos brasileiros
+
+## 👨‍💻 Status do Desenvolvimento
+
+✅ **Concluído:**
+
+- Configuração do projeto Next.js + TypeScript + Tailwind
+- Estrutura de dados simulados
+- Tipos TypeScript completos
+- Hook customizado para gerenciamento de estado
+- Funções utilitárias
+- Servidor de desenvolvimento rodando
+
+🔄 **Em Desenvolvimento:**
+
+- Componentes de interface (Map, AlertPanel, TelemetryChart)
+- Layout do dashboard principal
+- Integração dos componentes
+
+📅 **Próximos Passos:**
+
+- Implementação dos componentes visuais
+- Testes e otimizações
+- Deploy na Vercel
+
+---
+
+_Projeto desenvolvido como demonstração técnica para vaga de Frontend Developer Pleno na Oceanpact_

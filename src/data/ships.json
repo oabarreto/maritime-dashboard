@@ -1,0 +1,322 @@
+{
+  "ships": [
+    {
+      "id": "VES001",
+      "name": "Atlântico Explorer",
+      "type": "Cargo",
+      "status": "active",
+      "position": {
+        "lat": -23.9618,
+        "lng": -46.3322
+      },
+      "course": 145,
+      "speed": 12.5,
+      "destination": "Port of Santos",
+      "eta": "2025-08-24T14:30:00Z",
+      "captain": "Carlos Silva",
+      "flag": "Brazil",
+      "imo": "9123456",
+      "mmsi": "710001234",
+      "lastUpdate": "2025-08-23T10:15:00Z"
+    },
+    {
+      "id": "VES002",
+      "name": "Pacific Guardian",
+      "type": "Tanker",
+      "status": "critical",
+      "position": {
+        "lat": -22.8068,
+        "lng": -43.2729
+      },
+      "course": 278,
+      "speed": 8.2,
+      "destination": "Port of Rio de Janeiro",
+      "eta": "2025-08-23T18:45:00Z",
+      "captain": "Maria Santos",
+      "flag": "Brazil",
+      "imo": "9234567",
+      "mmsi": "710002345",
+      "lastUpdate": "2025-08-23T10:12:00Z"
+    },
+    {
+      "id": "VES003",
+      "name": "Oceanic Star",
+      "type": "Container",
+      "status": "active",
+      "position": {
+        "lat": -25.5163,
+        "lng": -48.5084
+      },
+      "course": 92,
+      "speed": 15.8,
+      "destination": "Port of Paranaguá",
+      "eta": "2025-08-23T16:20:00Z",
+      "captain": "João Oliveira",
+      "flag": "Brazil",
+      "imo": "9345678",
+      "mmsi": "710003456",
+      "lastUpdate": "2025-08-23T10:18:00Z"
+    },
+    {
+      "id": "VES004",
+      "name": "Maritime Pioneer",
+      "type": "Bulk Carrier",
+      "status": "warning",
+      "position": {
+        "lat": -32.0842,
+        "lng": -52.0696
+      },
+      "course": 12,
+      "speed": 10.3,
+      "destination": "Port of Rio Grande",
+      "eta": "2025-08-24T08:15:00Z",
+      "captain": "Ana Costa",
+      "flag": "Brazil",
+      "imo": "9456789",
+      "mmsi": "710004567",
+      "lastUpdate": "2025-08-23T10:08:00Z"
+    },
+    {
+      "id": "VES005",
+      "name": "Coastal Voyager",
+      "type": "Ferry",
+      "status": "maintenance",
+      "position": {
+        "lat": -13.0714,
+        "lng": -38.4014
+      },
+      "course": 0,
+      "speed": 0,
+      "destination": "Port of Salvador",
+      "eta": "2025-08-25T12:00:00Z",
+      "captain": "Pedro Mendes",
+      "flag": "Brazil",
+      "imo": "9567890",
+      "mmsi": "710005678",
+      "lastUpdate": "2025-08-23T09:45:00Z"
+    }
+  ],
+  "telemetry": {
+    "VES001": {
+      "engineTemp": [
+        { "timestamp": "2025-08-23T04:00:00Z", "value": 72 },
+        { "timestamp": "2025-08-23T05:00:00Z", "value": 75 },
+        { "timestamp": "2025-08-23T06:00:00Z", "value": 78 },
+        { "timestamp": "2025-08-23T07:00:00Z", "value": 80 },
+        { "timestamp": "2025-08-23T08:00:00Z", "value": 78 },
+        { "timestamp": "2025-08-23T08:30:00Z", "value": 82 },
+        { "timestamp": "2025-08-23T09:00:00Z", "value": 85 },
+        { "timestamp": "2025-08-23T09:30:00Z", "value": 83 },
+        { "timestamp": "2025-08-23T10:00:00Z", "value": 81 },
+        { "timestamp": "2025-08-23T10:15:00Z", "value": 79 },
+        { "timestamp": "2025-08-23T21:00:00Z", "value": 77 },
+        { "timestamp": "2025-08-23T21:15:00Z", "value": 75 },
+        { "timestamp": "2025-08-23T21:30:00Z", "value": 73 },
+        { "timestamp": "2025-08-23T21:45:00Z", "value": 76 },
+        { "timestamp": "2025-08-23T22:00:00Z", "value": 78 }
+      ],
+      "fuelLevel": [
+        { "timestamp": "2025-08-23T04:00:00Z", "value": 91 },
+        { "timestamp": "2025-08-23T05:00:00Z", "value": 89 },
+        { "timestamp": "2025-08-23T06:00:00Z", "value": 87 },
+        { "timestamp": "2025-08-23T07:00:00Z", "value": 86 },
+        { "timestamp": "2025-08-23T08:00:00Z", "value": 85 },
+        { "timestamp": "2025-08-23T08:30:00Z", "value": 83 },
+        { "timestamp": "2025-08-23T09:00:00Z", "value": 81 },
+        { "timestamp": "2025-08-23T09:30:00Z", "value": 79 },
+        { "timestamp": "2025-08-23T10:00:00Z", "value": 77 },
+        { "timestamp": "2025-08-23T10:15:00Z", "value": 76 },
+        { "timestamp": "2025-08-23T21:00:00Z", "value": 74 },
+        { "timestamp": "2025-08-23T21:15:00Z", "value": 72 },
+        { "timestamp": "2025-08-23T21:30:00Z", "value": 70 },
+        { "timestamp": "2025-08-23T21:45:00Z", "value": 69 },
+        { "timestamp": "2025-08-23T22:00:00Z", "value": 67 }
+      ],
+      "speed": [
+        { "timestamp": "2025-08-23T04:00:00Z", "value": 10.2 },
+        { "timestamp": "2025-08-23T05:00:00Z", "value": 11.8 },
+        { "timestamp": "2025-08-23T06:00:00Z", "value": 12.1 },
+        { "timestamp": "2025-08-23T07:00:00Z", "value": 11.5 },
+        { "timestamp": "2025-08-23T08:00:00Z", "value": 11.2 },
+        { "timestamp": "2025-08-23T08:30:00Z", "value": 12.8 },
+        { "timestamp": "2025-08-23T09:00:00Z", "value": 13.1 },
+        { "timestamp": "2025-08-23T09:30:00Z", "value": 12.5 },
+        { "timestamp": "2025-08-23T10:00:00Z", "value": 12.5 },
+        { "timestamp": "2025-08-23T10:15:00Z", "value": 12.3 },
+        { "timestamp": "2025-08-23T21:00:00Z", "value": 10.8 },
+        { "timestamp": "2025-08-23T21:15:00Z", "value": 11.2 },
+        { "timestamp": "2025-08-23T21:30:00Z", "value": 11.6 },
+        { "timestamp": "2025-08-23T21:45:00Z", "value": 12.0 },
+        { "timestamp": "2025-08-23T22:00:00Z", "value": 12.4 }
+      ]
+    },
+    "VES002": {
+      "engineTemp": [
+        { "timestamp": "2025-08-23T04:00:00Z", "value": 88 },
+        { "timestamp": "2025-08-23T05:00:00Z", "value": 90 },
+        { "timestamp": "2025-08-23T06:00:00Z", "value": 89 },
+        { "timestamp": "2025-08-23T07:00:00Z", "value": 91 },
+        { "timestamp": "2025-08-23T08:00:00Z", "value": 92 },
+        { "timestamp": "2025-08-23T08:30:00Z", "value": 95 },
+        { "timestamp": "2025-08-23T09:00:00Z", "value": 98 },
+        { "timestamp": "2025-08-23T09:30:00Z", "value": 101 },
+        { "timestamp": "2025-08-23T10:00:00Z", "value": 103 },
+        { "timestamp": "2025-08-23T10:15:00Z", "value": 105 },
+        { "timestamp": "2025-08-23T21:00:00Z", "value": 95 },
+        { "timestamp": "2025-08-23T21:15:00Z", "value": 92 },
+        { "timestamp": "2025-08-23T21:30:00Z", "value": 89 },
+        { "timestamp": "2025-08-23T21:45:00Z", "value": 87 },
+        { "timestamp": "2025-08-23T22:00:00Z", "value": 85 }
+      ],
+      "fuelLevel": [
+        { "timestamp": "2025-08-23T04:00:00Z", "value": 48 },
+        { "timestamp": "2025-08-23T05:00:00Z", "value": 46 },
+        { "timestamp": "2025-08-23T06:00:00Z", "value": 44 },
+        { "timestamp": "2025-08-23T07:00:00Z", "value": 43 },
+        { "timestamp": "2025-08-23T08:00:00Z", "value": 42 },
+        { "timestamp": "2025-08-23T08:30:00Z", "value": 39 },
+        { "timestamp": "2025-08-23T09:00:00Z", "value": 36 },
+        { "timestamp": "2025-08-23T09:30:00Z", "value": 33 },
+        { "timestamp": "2025-08-23T10:00:00Z", "value": 30 },
+        { "timestamp": "2025-08-23T10:15:00Z", "value": 28 }
+      ],
+      "speed": [
+        { "timestamp": "2025-08-23T04:00:00Z", "value": 9.8 },
+        { "timestamp": "2025-08-23T05:00:00Z", "value": 9.5 },
+        { "timestamp": "2025-08-23T06:00:00Z", "value": 9.2 },
+        { "timestamp": "2025-08-23T07:00:00Z", "value": 9.0 },
+        { "timestamp": "2025-08-23T08:00:00Z", "value": 9.1 },
+        { "timestamp": "2025-08-23T08:30:00Z", "value": 8.8 },
+        { "timestamp": "2025-08-23T09:00:00Z", "value": 8.5 },
+        { "timestamp": "2025-08-23T09:30:00Z", "value": 8.2 },
+        { "timestamp": "2025-08-23T10:00:00Z", "value": 8.2 },
+        { "timestamp": "2025-08-23T10:15:00Z", "value": 7.9 }
+      ]
+    },
+    "VES003": {
+      "engineTemp": [
+        { "timestamp": "2025-08-23T04:00:00Z", "value": 76 },
+        { "timestamp": "2025-08-23T05:00:00Z", "value": 78 },
+        { "timestamp": "2025-08-23T06:00:00Z", "value": 80 },
+        { "timestamp": "2025-08-23T07:00:00Z", "value": 82 },
+        { "timestamp": "2025-08-23T08:00:00Z", "value": 84 },
+        { "timestamp": "2025-08-23T08:30:00Z", "value": 86 },
+        { "timestamp": "2025-08-23T09:00:00Z", "value": 85 },
+        { "timestamp": "2025-08-23T09:30:00Z", "value": 87 },
+        { "timestamp": "2025-08-23T10:00:00Z", "value": 85 },
+        { "timestamp": "2025-08-23T10:15:00Z", "value": 84 }
+      ],
+      "fuelLevel": [
+        { "timestamp": "2025-08-23T04:00:00Z", "value": 72 },
+        { "timestamp": "2025-08-23T05:00:00Z", "value": 70 },
+        { "timestamp": "2025-08-23T06:00:00Z", "value": 68 },
+        { "timestamp": "2025-08-23T07:00:00Z", "value": 66 },
+        { "timestamp": "2025-08-23T08:00:00Z", "value": 64 },
+        { "timestamp": "2025-08-23T08:30:00Z", "value": 62 },
+        { "timestamp": "2025-08-23T09:00:00Z", "value": 60 },
+        { "timestamp": "2025-08-23T09:30:00Z", "value": 58 },
+        { "timestamp": "2025-08-23T10:00:00Z", "value": 56 },
+        { "timestamp": "2025-08-23T10:15:00Z", "value": 55 }
+      ],
+      "speed": [
+        { "timestamp": "2025-08-23T04:00:00Z", "value": 14.2 },
+        { "timestamp": "2025-08-23T05:00:00Z", "value": 15.1 },
+        { "timestamp": "2025-08-23T06:00:00Z", "value": 15.5 },
+        { "timestamp": "2025-08-23T07:00:00Z", "value": 15.8 },
+        { "timestamp": "2025-08-23T08:00:00Z", "value": 16.1 },
+        { "timestamp": "2025-08-23T08:30:00Z", "value": 15.9 },
+        { "timestamp": "2025-08-23T09:00:00Z", "value": 15.8 },
+        { "timestamp": "2025-08-23T09:30:00Z", "value": 15.8 },
+        { "timestamp": "2025-08-23T10:00:00Z", "value": 15.8 },
+        { "timestamp": "2025-08-23T10:15:00Z", "value": 15.6 }
+      ]
+    }
+  },
+  "alerts": [
+    {
+      "id": "ALT001",
+      "shipId": "VES002",
+      "type": "critical",
+      "title": "Motor Superaquecido",
+      "description": "Temperatura do motor excedeu limite seguro (>100°C)",
+      "timestamp": "2025-08-23T10:05:00Z",
+      "resolved": false,
+      "priority": "high"
+    },
+    {
+      "id": "ALT002",
+      "shipId": "VES002",
+      "type": "warning",
+      "title": "Combustível Baixo",
+      "description": "Nível de combustível abaixo de 35%",
+      "timestamp": "2025-08-23T09:30:00Z",
+      "resolved": false,
+      "priority": "medium"
+    },
+    {
+      "id": "ALT003",
+      "shipId": "VES004",
+      "type": "warning",
+      "title": "Condições Climáticas Adversas",
+      "description": "Ventos fortes detectados na rota (>25 nós)",
+      "timestamp": "2025-08-23T08:45:00Z",
+      "resolved": false,
+      "priority": "medium"
+    },
+    {
+      "id": "ALT004",
+      "shipId": "VES005",
+      "type": "info",
+      "title": "Manutenção Programada",
+      "description": "Embarcação em manutenção preventiva no porto",
+      "timestamp": "2025-08-23T07:00:00Z",
+      "resolved": false,
+      "priority": "low"
+    },
+    {
+      "id": "ALT005",
+      "shipId": "VES001",
+      "type": "info",
+      "title": "Chegada no Destino",
+      "description": "ETA confirmado para Port of Santos às 14:30",
+      "timestamp": "2025-08-23T06:15:00Z",
+      "resolved": true,
+      "priority": "low"
+    }
+  ],
+  "weatherData": [
+    {
+      "location": "Santos Bay",
+      "lat": -23.9618,
+      "lng": -46.3322,
+      "temperature": 22,
+      "windSpeed": 15,
+      "windDirection": 120,
+      "waveHeight": 1.2,
+      "visibility": 8,
+      "timestamp": "2025-08-23T10:00:00Z"
+    },
+    {
+      "location": "Rio de Janeiro Bay",
+      "lat": -22.9068,
+      "lng": -43.1729,
+      "temperature": 25,
+      "windSpeed": 12,
+      "windDirection": 85,
+      "waveHeight": 0.8,
+      "visibility": 10,
+      "timestamp": "2025-08-23T10:00:00Z"
+    },
+    {
+      "location": "Paranaguá Bay",
+      "lat": -25.5163,
+      "lng": -48.5084,
+      "temperature": 18,
+      "windSpeed": 28,
+      "windDirection": 200,
+      "waveHeight": 2.1,
+      "visibility": 6,
+      "timestamp": "2025-08-23T10:00:00Z"
+    }
+  ]
+}
