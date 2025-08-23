@@ -97,46 +97,46 @@ export default function AlertPanel({
     <div
       className={`bg-white rounded-lg shadow-lg border border-gray-200 flex flex-col ${className}`}
     >
-      <div className="p-3 border-b border-gray-200 bg-gradient-to-r from-orange-50 to-red-50">
-        <div className="flex items-center justify-between mb-3">
-          <div className="flex-1">
-            <h2 className="text-lg font-bold text-gray-900 flex items-center gap-2">
-              <AlertTriangle className="w-5 h-5 text-amber-500" />
-              Central de Alertas
+      <div className="p-2 sm:p-3 border-b border-gray-200 bg-gradient-to-r from-orange-50 to-red-50">
+        <div className="flex items-center justify-between mb-2 sm:mb-3">
+          <div className="flex-1 min-w-0">
+            <h2 className="text-sm sm:text-lg font-bold text-gray-900 flex items-center gap-1 sm:gap-2">
+              <AlertTriangle className="w-4 sm:w-5 h-4 sm:h-5 text-amber-500 shrink-0" />
+              <span className="truncate">Central de Alertas</span>
             </h2>
-            <p className="text-xs text-gray-600 mt-1">
+            <p className="text-xs text-gray-600 mt-1 hidden sm:block">
               Monitore alertas em tempo real
             </p>
           </div>
-          <div className="text-center ml-3">
-            <div className="bg-red-500 text-white px-3 py-1 rounded-lg font-bold text-sm">
+          <div className="text-center ml-2 sm:ml-3 shrink-0">
+            <div className="bg-red-500 text-white px-2 sm:px-3 py-1 rounded-lg font-bold text-xs sm:text-sm">
               {alertCounts.unresolved}
             </div>
             <p className="text-xs text-gray-600 mt-1">Ativos</p>
           </div>
         </div>
 
-        <div className="grid grid-cols-4 gap-1 mb-3">
-          <div className="bg-white rounded p-2 text-center border border-red-200">
-            <div className="text-sm font-bold text-red-600">
+        <div className="grid grid-cols-4 gap-1 mb-2 sm:mb-3">
+          <div className="bg-white rounded p-1 sm:p-2 text-center border border-red-200">
+            <div className="text-xs sm:text-sm font-bold text-red-600">
               {alertCounts.critical}
             </div>
             <div className="text-xs text-gray-600">Críticos</div>
           </div>
-          <div className="bg-white rounded p-2 text-center border border-yellow-200">
-            <div className="text-sm font-bold text-yellow-600">
+          <div className="bg-white rounded p-1 sm:p-2 text-center border border-yellow-200">
+            <div className="text-xs sm:text-sm font-bold text-yellow-600">
               {alertCounts.warning}
             </div>
             <div className="text-xs text-gray-600">Avisos</div>
           </div>
-          <div className="bg-white rounded p-2 text-center border border-blue-200">
-            <div className="text-sm font-bold text-blue-600">
+          <div className="bg-white rounded p-1 sm:p-2 text-center border border-blue-200">
+            <div className="text-xs sm:text-sm font-bold text-blue-600">
               {alertCounts.info}
             </div>
             <div className="text-xs text-gray-600">Info</div>
           </div>
-          <div className="bg-white rounded p-2 text-center border border-gray-200">
-            <div className="text-sm font-bold text-gray-600">
+          <div className="bg-white rounded p-1 sm:p-2 text-center border border-gray-200">
+            <div className="text-xs sm:text-sm font-bold text-gray-600">
               {alertCounts.total}
             </div>
             <div className="text-xs text-gray-600">Total</div>
@@ -144,82 +144,94 @@ export default function AlertPanel({
         </div>
 
         <div className="space-y-1">
-          <div className="flex gap-1">
+          <div className="flex gap-1 flex-wrap">
             <button
               onClick={() => setFilter("unresolved")}
-              className={`px-2 py-1 rounded text-xs font-medium transition-all ${
+              className={`px-1.5 sm:px-2 py-1 rounded text-xs font-medium transition-all ${
                 filter === "unresolved"
                   ? "bg-gray-900 text-white"
                   : "bg-white text-gray-700 hover:bg-gray-100 border border-gray-300"
               }`}
             >
-              Não Resolvidos ({alertCounts.unresolved})
+              <span className="hidden sm:inline">Não Resolvidos </span>
+              <span className="sm:hidden">N.Res. </span>(
+              {alertCounts.unresolved})
             </button>
             <button
               onClick={() => setFilter("critical")}
-              className={`px-2 py-1 rounded text-xs font-medium transition-all ${
+              className={`px-1.5 sm:px-2 py-1 rounded text-xs font-medium transition-all ${
                 filter === "critical"
                   ? "bg-red-600 text-white"
                   : "bg-white text-red-700 hover:bg-red-50 border border-red-300"
               }`}
             >
-              Críticos ({alertCounts.critical})
+              <span className="hidden sm:inline">Críticos </span>
+              <span className="sm:hidden">Crít. </span>({alertCounts.critical})
             </button>
-          </div>
-          <div className="flex gap-1">
             <button
               onClick={() => setFilter("warning")}
-              className={`px-2 py-1 rounded text-xs font-medium transition-all ${
+              className={`px-1.5 sm:px-2 py-1 rounded text-xs font-medium transition-all ${
                 filter === "warning"
                   ? "bg-yellow-600 text-white"
                   : "bg-white text-yellow-700 hover:bg-yellow-50 border border-yellow-300"
               }`}
             >
-              Avisos ({alertCounts.warning})
+              <span className="hidden sm:inline">Avisos </span>
+              <span className="sm:hidden">Av. </span>({alertCounts.warning})
             </button>
+          </div>
+          <div className="flex gap-1 flex-wrap">
             <button
               onClick={() => setFilter("info")}
-              className={`px-2 py-1 rounded text-xs font-medium transition-all ${
+              className={`px-1.5 sm:px-2 py-1 rounded text-xs font-medium transition-all ${
                 filter === "info"
                   ? "bg-blue-600 text-white"
                   : "bg-white text-blue-700 hover:bg-blue-50 border border-blue-300"
               }`}
             >
-              Informativos ({alertCounts.info})
+              <span className="hidden sm:inline">Informativos </span>
+              <span className="sm:hidden">Info </span>({alertCounts.info})
             </button>
             <button
               onClick={() => setFilter("all")}
-              className={`px-2 py-1 rounded text-xs font-medium transition-all ${
+              className={`px-1.5 sm:px-2 py-1 rounded text-xs font-medium transition-all ${
                 filter === "all"
                   ? "bg-gray-900 text-white"
                   : "bg-white text-gray-700 hover:bg-gray-100 border border-gray-300"
               }`}
             >
-              Todos ({alertCounts.total})
+              <span className="hidden sm:inline">Todos </span>
+              <span className="sm:hidden">All </span>({alertCounts.total})
             </button>
           </div>
         </div>
       </div>
 
-      <div className="flex-1 overflow-y-auto" style={{ minHeight: "300px" }}>
+      <div
+        className="flex-1 overflow-y-auto p-1 sm:p-2"
+        style={{
+          minHeight: "200px",
+          maxHeight: "calc(100% - 180px)",
+        }}
+      >
         {sortedAlerts.length === 0 ? (
-          <div className="p-8 text-center">
-            <div className="bg-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-              <Info className="w-8 h-8 text-green-600" />
+          <div className="p-4 sm:p-8 text-center">
+            <div className="bg-green-100 rounded-full w-12 sm:w-16 h-12 sm:h-16 flex items-center justify-center mx-auto mb-4">
+              <Info className="w-6 sm:w-8 h-6 sm:h-8 text-green-600" />
             </div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">
+            <h3 className="text-sm sm:text-lg font-semibold text-gray-900 mb-2">
               Nenhum alerta na categoria selecionada
             </h3>
-            <p className="text-gray-600 max-w-md mx-auto text-sm">
+            <p className="text-gray-600 max-w-md mx-auto text-xs sm:text-sm">
               {filter === "unresolved"
-                ? "Excelente! Todos os alertas foram resolvidos e os sistemas estão funcionando normalmente."
+                ? "Excelente! Todos os alertas foram resolvidos."
                 : filter === "critical"
-                ? "Não há alertas críticos no momento. A frota está operando com segurança."
+                ? "Não há alertas críticos no momento."
                 : filter === "warning"
-                ? "Não há avisos pendentes. Todos os sistemas estão estáveis."
+                ? "Não há avisos pendentes."
                 : filter === "info"
                 ? "Não há alertas informativos recentes."
-                : "Não há alertas registrados no sistema."}
+                : "Não há alertas registrados."}
             </p>
           </div>
         ) : (
@@ -227,7 +239,7 @@ export default function AlertPanel({
             {sortedAlerts.map((alert) => (
               <div
                 key={alert.id}
-                className={`p-3 cursor-pointer transition-all duration-200 border-l-4 ${
+                className={`p-2 sm:p-3 cursor-pointer transition-all duration-200 border-l-4 ${
                   selectedAlert?.id === alert.id
                     ? "bg-blue-50 border-l-blue-500 shadow-md"
                     : "bg-white border-l-transparent hover:bg-gray-50 hover:border-l-gray-200"
@@ -238,10 +250,10 @@ export default function AlertPanel({
                   )
                 }
               >
-                <div className="flex items-start justify-between">
-                  <div className="flex items-start gap-3 flex-1">
+                <div className="flex items-start justify-between gap-2">
+                  <div className="flex items-start gap-2 sm:gap-3 flex-1 min-w-0">
                     <div
-                      className={`p-1.5 rounded-lg ${
+                      className={`p-1 sm:p-1.5 rounded-lg shrink-0 ${
                         alert.type === "critical"
                           ? "bg-red-100 text-gray-600"
                           : alert.type === "warning"
@@ -249,12 +261,14 @@ export default function AlertPanel({
                           : "bg-blue-100 text-gray-600"
                       }`}
                     >
-                      {getAlertIcon(alert.type)}
+                      <span className="text-xs sm:text-sm">
+                        {getAlertIcon(alert.type)}
+                      </span>
                     </div>
                     <div className="flex-1 min-w-0">
-                      <div className="flex items-center gap-2 mb-1">
+                      <div className="flex flex-wrap items-center gap-1 mb-1">
                         <span
-                          className={`px-2 py-0.5 rounded-full text-xs font-medium ${
+                          className={`px-1.5 sm:px-2 py-0.5 rounded-full text-xs font-medium ${
                             alert.type === "critical"
                               ? "bg-red-100 text-red-800"
                               : alert.type === "warning"
@@ -263,13 +277,13 @@ export default function AlertPanel({
                           }`}
                         >
                           {alert.type === "critical"
-                            ? "CRÍTICO"
+                            ? "CRÍT"
                             : alert.type === "warning"
                             ? "AVISO"
                             : "INFO"}
                         </span>
                         <span
-                          className={`px-2 py-0.5 rounded-full text-xs font-medium ${
+                          className={`px-1.5 sm:px-2 py-0.5 rounded-full text-xs font-medium hidden sm:inline-flex ${
                             alert.priority === "high"
                               ? "bg-red-100 text-red-800"
                               : alert.priority === "medium"
@@ -285,28 +299,34 @@ export default function AlertPanel({
                             : "Baixa"}
                         </span>
                       </div>
-                      <h4 className="font-semibold text-gray-900 text-sm truncate">
+                      <h4 className="font-semibold text-gray-900 text-xs sm:text-sm truncate">
                         {alert.title}
                       </h4>
                       <p className="text-gray-600 text-xs mt-1 line-clamp-2">
                         {alert.description}
                       </p>
-                      <div className="flex items-center gap-4 mt-2 text-xs text-gray-500">
-                        <span>Embarcação: {getShipName(alert.shipId)}</span>
-                        <span>{formatTimestamp(alert.timestamp)}</span>
+                      <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 mt-2 text-xs text-gray-500">
+                        <span className="truncate">
+                          Embarcação: {getShipName(alert.shipId)}
+                        </span>
+                        <span className="text-xs">
+                          {formatTimestamp(alert.timestamp)}
+                        </span>
                       </div>
                     </div>
                   </div>
-                  <div className="ml-2">
+                  <div className="shrink-0">
                     {isAlertResolved(alert) ? (
-                      <span className="inline-flex items-center gap-1 px-2 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                      <span className="inline-flex items-center gap-1 px-1.5 sm:px-2 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
                         <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                        Resolvido
+                        <span className="hidden sm:inline">Resolvido</span>
+                        <span className="sm:hidden">Ok</span>
                       </span>
                     ) : (
-                      <span className="inline-flex items-center gap-1 px-2 py-1 rounded-full text-xs font-medium bg-red-100 text-red-800">
+                      <span className="inline-flex items-center gap-1 px-1.5 sm:px-2 py-1 rounded-full text-xs font-medium bg-red-100 text-red-800">
                         <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
-                        Ativo
+                        <span className="hidden sm:inline">Ativo</span>
+                        <span className="sm:hidden">!</span>
                       </span>
                     )}
                   </div>

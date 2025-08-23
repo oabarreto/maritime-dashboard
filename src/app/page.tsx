@@ -86,32 +86,32 @@ export default function Home() {
     <div className="min-h-screen bg-gray-50">
       <header className="bg-white shadow-sm border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between py-4 sm:py-0 sm:h-16 gap-4 sm:gap-0">
             <div className="flex items-center gap-3">
               <div className="p-2 bg-blue-600 rounded-lg">
                 <Waves className="w-6 h-6 text-white" />
               </div>
               <div>
-                <h1 className="text-xl font-bold text-gray-900">
+                <h1 className="text-lg sm:text-xl font-bold text-gray-900">
                   Maritime Dashboard
                 </h1>
-                <p className="text-sm text-gray-500">
+                <p className="text-xs sm:text-sm text-gray-500">
                   Monitoramento em Tempo Real
                 </p>
               </div>
             </div>
-            <div className="flex items-center gap-4">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 w-full sm:w-auto">
               <button
                 onClick={refreshData}
                 disabled={isLoading}
-                className="flex items-center gap-2 px-3 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 transition-colors"
+                className="flex items-center justify-center gap-2 px-3 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 transition-colors w-full sm:w-auto text-sm"
               >
                 <RefreshCw
                   className={`w-4 h-4 ${isLoading ? "animate-spin" : ""}`}
                 />
                 {isLoading ? "Atualizando..." : "Atualizar"}
               </button>
-              <div className="text-right">
+              <div className="text-left sm:text-right">
                 <p className="text-sm font-medium text-gray-900">
                   {new Date().toLocaleTimeString("pt-BR")}
                 </p>
@@ -124,78 +124,86 @@ export default function Home() {
         </div>
       </header>
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-6 sm:mb-8">
           {stats.map((stat, index) => (
             <div
               key={index}
-              className="bg-white rounded-lg shadow-sm border border-gray-200 p-4"
+              className="bg-white rounded-lg shadow-sm border border-gray-200 p-3 sm:p-4"
             >
-              <div className="flex items-center gap-3">
-                <div className={`p-2 rounded-lg ${stat.bgColor} ${stat.color}`}>
+              <div className="flex flex-col sm:flex-row items-center sm:items-start gap-2 sm:gap-3">
+                <div
+                  className={`p-2 rounded-lg ${stat.bgColor} ${stat.color} shrink-0`}
+                >
                   {stat.icon}
                 </div>
-                <div>
-                  <p className="text-2xl font-bold text-gray-900">
+                <div className="text-center sm:text-left min-w-0">
+                  <p className="text-xl sm:text-2xl font-bold text-gray-900">
                     {stat.value}
                   </p>
-                  <p className="text-sm text-gray-600">{stat.label}</p>
+                  <p className="text-xs sm:text-sm text-gray-600 leading-tight">
+                    {stat.label}
+                  </p>
                 </div>
               </div>
             </div>
           ))}
         </div>
 
-        <div className="space-y-6">
-          <div className="grid grid-cols-1 xl:grid-cols-5 gap-6">
-            <div className="xl:col-span-3">
+        <div className="space-y-4 sm:space-y-6">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 sm:gap-6">
+            <div className="lg:col-span-3">
               <Map
                 ships={data.ships}
                 selectedShip={selectedShip}
                 onShipSelect={setSelectedShip}
-                className="h-[600px]"
+                className="h-[300px] sm:h-[400px] lg:h-[600px]"
               />
             </div>
-            <div className="xl:col-span-2">
+            <div className="lg:col-span-2">
               <AlertPanel
                 alerts={data.alerts}
                 ships={data.ships}
                 onAlertResolve={handleAlertResolve}
-                className="h-[600px]"
+                className="h-[300px] sm:h-[400px] lg:h-[600px] overflow-hidden"
               />
             </div>
           </div>
 
-          <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-6">
-            <h3 className="text-lg font-semibold text-gray-900 flex items-center gap-2 mb-6">
-              <ShipWheel className="w-5 h-5 text-blue-500" />
+          <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-3 sm:p-6 mt-4 sm:mt-6">
+            <h3 className="text-sm sm:text-lg font-semibold text-gray-900 flex items-center gap-2 mb-3 sm:mb-6">
+              <ShipWheel className="w-4 sm:w-5 h-4 sm:h-5 text-blue-500" />
               Status da Frota
             </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              <div className="text-center p-4 bg-blue-50 rounded-lg">
-                <div className="text-3xl font-bold text-blue-600">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-6">
+              <div className="text-center p-2 sm:p-4 bg-blue-50 rounded-lg">
+                <div className="text-lg sm:text-3xl font-bold text-blue-600">
                   {data.ships.length}
                 </div>
-                <div className="text-sm text-gray-600 mt-1">
-                  Total de Embarcações
+                <div className="text-xs sm:text-sm text-gray-600 mt-1 leading-tight">
+                  Total Embarcações
                 </div>
               </div>
-              <div className="text-center p-4 bg-green-50 rounded-lg">
-                <div className="text-3xl font-bold text-green-600">
+              <div className="text-center p-2 sm:p-4 bg-green-50 rounded-lg">
+                <div className="text-lg sm:text-3xl font-bold text-green-600">
                   {activeShips.length}
                 </div>
-                <div className="text-sm text-gray-600 mt-1">Operacionais</div>
+                <div className="text-xs sm:text-sm text-gray-600 mt-1 leading-tight">
+                  Operacionais
+                </div>
               </div>
-              <div className="text-center p-4 bg-red-50 rounded-lg">
-                <div className="text-3xl font-bold text-red-600">
+              <div className="text-center p-2 sm:p-4 bg-red-50 rounded-lg">
+                <div className="text-lg sm:text-3xl font-bold text-red-600">
                   {activeAlerts.length}
                 </div>
-                <div className="text-sm text-gray-600 mt-1">Alertas Ativos</div>
+                <div className="text-xs sm:text-sm text-gray-600 mt-1 leading-tight">
+                  Alertas Ativos
+                </div>
               </div>
-              <div className="text-center p-4 bg-orange-50 rounded-lg">
-                <div className="text-3xl font-bold text-orange-600">
+              <div className="text-center p-2 sm:p-4 bg-orange-50 rounded-lg">
+                <div className="text-lg sm:text-3xl font-bold text-orange-600">
                   {criticalAlerts.length}
                 </div>
-                <div className="text-sm text-gray-600 mt-1">
+                <div className="text-xs sm:text-sm text-gray-600 mt-1 leading-tight">
                   Alertas Críticos
                 </div>
               </div>
@@ -204,40 +212,50 @@ export default function Home() {
 
           {selectedShip && (
             <div className="space-y-6">
-              <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
-                <div className="flex items-center justify-between mb-6">
-                  <h3 className="text-xl font-semibold text-gray-900 flex items-center gap-2">
-                    <Navigation className="w-6 h-6 text-blue-500" />
-                    Detalhes da Embarcação: {selectedShip.name}
+              <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-4 sm:p-6">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-4 sm:mb-6 gap-3 sm:gap-0">
+                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 flex items-center gap-2">
+                    <Navigation className="w-5 sm:w-6 h-5 sm:h-6 text-blue-500" />
+                    <span className="break-all sm:break-normal">
+                      Detalhes: {selectedShip.name}
+                    </span>
                   </h3>
                   <button
                     onClick={() => setSelectedShip(null)}
-                    className="text-gray-400 hover:text-gray-600 transition-colors p-2 hover:bg-gray-100 rounded-lg"
+                    className="text-gray-400 hover:text-gray-600 transition-colors p-2 hover:bg-gray-100 rounded-lg self-end sm:self-auto"
                   >
                     ✕
                   </button>
                 </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                  <div className="p-4 bg-gray-50 rounded-lg">
-                    <p className="text-sm text-gray-600 mb-1">Nome</p>
-                    <p className="font-semibold text-gray-900">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+                  <div className="p-3 sm:p-4 bg-gray-50 rounded-lg">
+                    <p className="text-xs sm:text-sm text-gray-600 mb-1">
+                      Nome
+                    </p>
+                    <p className="font-semibold text-gray-900 break-all sm:break-normal">
                       {selectedShip.name}
                     </p>
                   </div>
-                  <div className="p-4 bg-gray-50 rounded-lg">
-                    <p className="text-sm text-gray-600 mb-1">Tipo</p>
+                  <div className="p-3 sm:p-4 bg-gray-50 rounded-lg">
+                    <p className="text-xs sm:text-sm text-gray-600 mb-1">
+                      Tipo
+                    </p>
                     <p className="font-semibold text-gray-900">
                       {selectedShip.type}
                     </p>
                   </div>
-                  <div className="p-4 bg-gray-50 rounded-lg">
-                    <p className="text-sm text-gray-600 mb-1">Destino</p>
-                    <p className="font-semibold text-gray-900">
+                  <div className="p-3 sm:p-4 bg-gray-50 rounded-lg">
+                    <p className="text-xs sm:text-sm text-gray-600 mb-1">
+                      Destino
+                    </p>
+                    <p className="font-semibold text-gray-900 break-all sm:break-normal">
                       {selectedShip.destination}
                     </p>
                   </div>
-                  <div className="p-4 bg-gray-50 rounded-lg">
-                    <p className="text-sm text-gray-600 mb-1">Capitão</p>
+                  <div className="p-3 sm:p-4 bg-gray-50 rounded-lg">
+                    <p className="text-xs sm:text-sm text-gray-600 mb-1">
+                      Capitão
+                    </p>
                     <p className="font-semibold text-gray-900">
                       {selectedShip.captain}
                     </p>
@@ -258,13 +276,90 @@ export default function Home() {
         </div>
 
         <div className="bg-white rounded-lg shadow-sm border border-gray-200">
-          <div className="p-4 border-b border-gray-200">
-            <h3 className="text-lg font-semibold text-gray-900 flex items-center gap-2">
-              <ShipIcon className="w-5 h-5 text-blue-500" />
+          <div className="p-3 sm:p-4 border-b border-gray-200">
+            <h3 className="text-base sm:text-lg font-semibold text-gray-900 flex items-center gap-2">
+              <ShipIcon className="w-4 sm:w-5 h-4 sm:h-5 text-blue-500" />
               Todas as Embarcações
             </h3>
           </div>
-          <div className="overflow-x-auto">
+
+          {/* Mobile Card Layout */}
+          <div className="block sm:hidden">
+            <div className="divide-y divide-gray-200">
+              {data.ships.map((ship) => (
+                <div
+                  key={ship.id}
+                  className={`p-4 hover:bg-gray-50 cursor-pointer ${
+                    selectedShip?.id === ship.id ? "bg-blue-50" : ""
+                  }`}
+                  onClick={() => setSelectedShip(ship)}
+                >
+                  <div className="flex items-start justify-between mb-2">
+                    <div className="flex items-center gap-3">
+                      <div
+                        className={`w-3 h-3 rounded-full ${
+                          ship.status === "active" ? "bg-green-500" : ""
+                        }${ship.status === "critical" ? "bg-red-500" : ""}${
+                          ship.status === "warning" ? "bg-yellow-500" : ""
+                        }${ship.status === "maintenance" ? "bg-gray-500" : ""}`}
+                      ></div>
+                      <div>
+                        <p className="font-medium text-gray-900 text-sm">
+                          {ship.name}
+                        </p>
+                        <p className="text-xs text-gray-500">{ship.type}</p>
+                      </div>
+                    </div>
+                    <span
+                      className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${
+                        ship.status === "active"
+                          ? "bg-green-100 text-green-800"
+                          : ""
+                      }${
+                        ship.status === "critical"
+                          ? "bg-red-100 text-red-800"
+                          : ""
+                      }${
+                        ship.status === "warning"
+                          ? "bg-yellow-100 text-yellow-800"
+                          : ""
+                      }${
+                        ship.status === "maintenance"
+                          ? "bg-gray-100 text-gray-800"
+                          : ""
+                      }`}
+                    >
+                      {ship.status === "active" && "Ativo"}
+                      {ship.status === "critical" && "Crítico"}
+                      {ship.status === "warning" && "Aviso"}
+                      {ship.status === "maintenance" && "Manutenção"}
+                    </span>
+                  </div>
+                  <div className="grid grid-cols-2 gap-2 text-xs">
+                    <div>
+                      <span className="text-gray-500">Velocidade:</span>
+                      <span className="ml-1 font-medium">
+                        {ship.speed.toFixed(1)} nós
+                      </span>
+                    </div>
+                    <div>
+                      <span className="text-gray-500">ETA:</span>
+                      <span className="ml-1 font-medium">
+                        {new Date(ship.eta).toLocaleDateString("pt-BR")}
+                      </span>
+                    </div>
+                  </div>
+                  <div className="mt-2 text-xs">
+                    <span className="text-gray-500">Destino:</span>
+                    <span className="ml-1 font-medium">{ship.destination}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Desktop Table Layout */}
+          <div className="hidden sm:block overflow-x-auto">
             <table className="w-full">
               <thead className="bg-gray-50">
                 <tr>

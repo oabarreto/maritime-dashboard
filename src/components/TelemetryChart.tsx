@@ -108,35 +108,42 @@ export default function TelemetryChart({
   };
   return (
     <div className={`bg-white rounded-lg shadow-lg mb-6 ${className}`}>
-      <div className="p-4 border-b border-gray-200">
-        <div className="flex items-center justify-between mb-4">
-          <h2 className="text-lg font-semibold text-gray-900 flex items-center gap-2">
-            <Gauge className="w-5 h-5 text-blue-500" />
-            Telemetria - {ship.name}
+      <div className="p-3 sm:p-4 border-b border-gray-200">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-3 sm:mb-4 gap-2">
+          <h2 className="text-base sm:text-lg font-semibold text-gray-900 flex items-center gap-2">
+            <Gauge className="w-4 sm:w-5 h-4 sm:h-5 text-blue-500" />
+            <span className="break-all sm:break-normal">
+              Telemetria - {ship.name}
+            </span>
           </h2>
-          <span className="text-sm text-gray-500">{ship.id}</span>
+          <span className="text-xs sm:text-sm text-gray-500">{ship.id}</span>
         </div>
 
-        <div className="flex gap-2 mb-4">
+        <div className="flex flex-wrap gap-1 sm:gap-2 mb-3 sm:mb-4">
           {Object.entries(metricConfigs).map(([key, config]) => (
             <button
               key={key}
               onClick={() => setSelectedMetric(key as MetricType)}
-              className={`flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-all ${
+              className={`flex items-center gap-1 sm:gap-2 px-2 sm:px-3 py-1 sm:py-2 rounded-lg text-xs sm:text-sm font-medium transition-all ${
                 selectedMetric === key
-                  ? "bg-blue-100 text-blue-700 ring-2 ring-blue-200"
+                  ? "bg-blue-100 text-blue-700 ring-1 sm:ring-2 ring-blue-200"
                   : "bg-gray-100 text-gray-600 hover:bg-gray-200"
               }`}
             >
-              {config.icon}
-              {config.label}
+              <span className="text-xs sm:text-sm">{config.icon}</span>
+              <span className="hidden sm:inline">{config.label}</span>
+              <span className="sm:hidden text-xs">
+                {config.label.split(" ")[0]}
+              </span>
             </button>
           ))}
         </div>
 
-        <div className="flex items-center gap-2">
-          <Calendar className="w-4 h-4 text-gray-500" />
-          <span className="text-sm text-gray-600 mr-2">Período:</span>
+        <div className="flex flex-col sm:flex-row sm:items-center gap-2">
+          <div className="flex items-center gap-2">
+            <Calendar className="w-3 sm:w-4 h-3 sm:h-4 text-gray-500" />
+            <span className="text-xs sm:text-sm text-gray-600">Período:</span>
+          </div>
           <div className="flex gap-1">
             {(["1h", "6h", "12h", "24h"] as const).map((range) => (
               <button
@@ -155,24 +162,24 @@ export default function TelemetryChart({
         </div>
       </div>
 
-      <div className="p-4 border-b border-gray-100">
+      <div className="p-3 sm:p-4 border-b border-gray-100">
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3">
             <div
-              className="p-3 rounded-full"
+              className="p-2 sm:p-3 rounded-full"
               style={{
                 backgroundColor: currentConfig.color + "20",
                 color: currentConfig.color,
               }}
             >
-              {currentConfig.icon}
+              <span className="text-sm sm:text-base">{currentConfig.icon}</span>
             </div>
             <div>
-              <p className="text-sm text-gray-600">
+              <p className="text-xs sm:text-sm text-gray-600">
                 {currentConfig.label} Atual
               </p>
               <p
-                className="text-2xl font-bold"
+                className="text-lg sm:text-2xl font-bold"
                 style={{ color: currentConfig.color }}
               >
                 {currentValue.toFixed(1)}
@@ -181,29 +188,34 @@ export default function TelemetryChart({
             </div>
           </div>
           {isInCriticalZone && (
-            <div className="flex items-center gap-2 bg-red-100 text-red-800 px-3 py-2 rounded-lg">
+            <div className="flex items-center gap-1 sm:gap-2 bg-red-100 text-red-800 px-2 sm:px-3 py-1 sm:py-2 rounded-lg">
               <span className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>
-              <span className="text-sm font-medium">Zona Crítica</span>
+              <span className="text-xs sm:text-sm font-medium">Crítico</span>
             </div>
           )}
         </div>
       </div>
 
-      <div className="p-4">
+      <div className="p-3 sm:p-4">
         {chartData.length === 0 ? (
-          <div className="h-64 flex items-center justify-center text-gray-500">
+          <div className="h-48 sm:h-64 flex items-center justify-center text-gray-500">
             <div className="text-center">
-              <Gauge className="w-12 h-12 text-gray-300 mx-auto mb-3" />
-              <p className="font-medium">Dados não disponíveis</p>
-              <p className="text-sm">
+              <Gauge className="w-8 sm:w-12 h-8 sm:h-12 text-gray-300 mx-auto mb-3" />
+              <p className="font-medium text-sm sm:text-base">
+                Dados não disponíveis
+              </p>
+              <p className="text-xs sm:text-sm">
                 Não há dados de telemetria para esta embarcação
               </p>
             </div>
           </div>
         ) : (
-          <div className="h-64">
+          <div className="h-48 sm:h-64">
             <ResponsiveContainer width="100%" height="100%">
-              <AreaChart data={chartData}>
+              <AreaChart
+                data={chartData}
+                margin={{ top: 5, right: 5, left: 5, bottom: 5 }}
+              >
                 <defs>
                   <linearGradient
                     id={currentConfig.gradientId}
@@ -237,11 +249,13 @@ export default function TelemetryChart({
                     })
                   }
                   stroke="#64748b"
-                  fontSize={12}
+                  fontSize={10}
+                  height={40}
                 />
                 <YAxis
                   stroke="#64748b"
-                  fontSize={12}
+                  fontSize={10}
+                  width={40}
                   tickFormatter={(value) => `${value}${currentConfig.unit}`}
                 />
                 <Tooltip content={<CustomTooltip />} />
@@ -251,9 +265,9 @@ export default function TelemetryChart({
                   stroke={currentConfig.color}
                   strokeWidth={2}
                   fill={`url(#${currentConfig.gradientId})`}
-                  dot={{ fill: currentConfig.color, strokeWidth: 2, r: 4 }}
+                  dot={{ fill: currentConfig.color, strokeWidth: 2, r: 3 }}
                   activeDot={{
-                    r: 6,
+                    r: 5,
                     stroke: currentConfig.color,
                     strokeWidth: 2,
                     fill: "#fff",
@@ -277,17 +291,17 @@ export default function TelemetryChart({
         )}
       </div>
 
-      <div className="p-4 border-t border-gray-100 bg-gray-50">
-        <div className="grid grid-cols-3 gap-4 text-center">
+      <div className="p-3 sm:p-4 border-t border-gray-100 bg-gray-50">
+        <div className="grid grid-cols-3 gap-2 sm:gap-4 text-center">
           <div>
             <p className="text-xs text-gray-600 uppercase tracking-wide">
               Mínimo
             </p>
-            <p className="text-lg font-semibold text-gray-900">
+            <p className="text-sm sm:text-lg font-semibold text-gray-900">
               {chartData.length > 0
                 ? Math.min(...chartData.map((d) => d.value)).toFixed(1)
                 : "--"}
-              <span className="text-sm text-gray-500">
+              <span className="text-xs text-gray-500">
                 {currentConfig.unit}
               </span>
             </p>
@@ -296,11 +310,11 @@ export default function TelemetryChart({
             <p className="text-xs text-gray-600 uppercase tracking-wide">
               Máximo
             </p>
-            <p className="text-lg font-semibold text-gray-900">
+            <p className="text-sm sm:text-lg font-semibold text-gray-900">
               {chartData.length > 0
                 ? Math.max(...chartData.map((d) => d.value)).toFixed(1)
                 : "--"}
-              <span className="text-sm text-gray-500">
+              <span className="text-xs text-gray-500">
                 {currentConfig.unit}
               </span>
             </p>
@@ -309,14 +323,14 @@ export default function TelemetryChart({
             <p className="text-xs text-gray-600 uppercase tracking-wide">
               Média
             </p>
-            <p className="text-lg font-semibold text-gray-900">
+            <p className="text-sm sm:text-lg font-semibold text-gray-900">
               {chartData.length > 0
                 ? (
                     chartData.reduce((acc, d) => acc + d.value, 0) /
                     chartData.length
                   ).toFixed(1)
                 : "--"}
-              <span className="text-sm text-gray-500">
+              <span className="text-xs text-gray-500">
                 {currentConfig.unit}
               </span>
             </p>

@@ -73,10 +73,7 @@ maritime-dashboard/
 │   ├── 📁 components/             # Componentes React
 │   │   ├── Map.tsx               # Mapa interativo com embarcações
 │   │   ├── AlertPanel.tsx        # Central de alertas com resolução
-│   │   ├── TelemetryChart.tsx    # Gráficos de telemetria
-│   │   ├── DashboardStats.tsx    # Estatísticas da frota
-│   │   ├── ShipFilters.tsx       # Filtros de embarcações
-│   │   └── Notifications.tsx     # Sistema de notificações
+│   │   └── TelemetryChart.tsx    # Gráficos de telemetria
 │   ├── 📁 data/                   # Dados simulados
 │   │   └── ships.json            # Dataset completo
 │   ├── 📁 hooks/                  # Custom Hooks
@@ -85,7 +82,7 @@ maritime-dashboard/
 │   │   └── utils.ts              # Funções auxiliares
 │   └── 📁 types/                  # Definições TypeScript
 │       └── maritime.ts           # Tipos do domínio marítimo
-├── 📁 public/                     # Assets estáticos
+├── 📁 public/                     # Assets estáticos (limpo)
 └── 📄 Arquivos de configuração   # Next.js, TypeScript, Tailwind
 ```
 
