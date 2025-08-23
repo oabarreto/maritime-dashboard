@@ -6,8 +6,8 @@
       "type": "Cargo",
       "status": "active",
       "position": {
-        "lat": -23.9618,
-        "lng": -46.3322
+        "lat": -26.0,
+        "lng": -43.0
       },
       "course": 145,
       "speed": 12.5,
@@ -25,8 +25,8 @@
       "type": "Tanker",
       "status": "critical",
       "position": {
-        "lat": -22.8068,
-        "lng": -43.2729
+        "lat": -22.0,
+        "lng": -39.0
       },
       "course": 278,
       "speed": 8.2,
@@ -44,8 +44,8 @@
       "type": "Container",
       "status": "active",
       "position": {
-        "lat": -25.5163,
-        "lng": -48.5084
+        "lat": -27.0,
+        "lng": -45.0
       },
       "course": 92,
       "speed": 15.8,
@@ -63,8 +63,8 @@
       "type": "Bulk Carrier",
       "status": "warning",
       "position": {
-        "lat": -32.0842,
-        "lng": -52.0696
+        "lat": -34.0,
+        "lng": -48.0
       },
       "course": 12,
       "speed": 10.3,
@@ -82,8 +82,8 @@
       "type": "Ferry",
       "status": "maintenance",
       "position": {
-        "lat": -13.0714,
-        "lng": -38.4014
+        "lat": -12.0,
+        "lng": -36.0
       },
       "course": 0,
       "speed": 0,
