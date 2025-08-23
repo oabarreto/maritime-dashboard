@@ -1,31 +1,40 @@
 # 🌊 Maritime Dashboard
 
-Um dashboard moderno para monitoramento marítimo em tempo real, desenvolvido com Next.js, TypeScript e Tailwind CSS.
+Dashboard profissional para monitoramento marítimo em tempo real, desenvolvido com Next.js 15, TypeScript e Tailwind CSS.
 
 ## 🎯 Sobre o Projeto
 
-Dashboard de demonstração para monitoramento de embarcações e condições oceânicas, criado como projeto showcase para posição de **Frontend Developer Pleno** na **Oceanpact**.
+Sistema completo de monitoramento naval com interface moderna e responsiva, criado como projeto showcase para demonstração de habilidades técnicas. O dashboard simula operações marítimas reais com dados em tempo real.
 
 ### ✨ Características Principais
 
-- **Monitoramento em Tempo Real**: Acompanhamento de embarcações com dados simulados
-- **Mapas Interativos**: Visualização de posições usando Leaflet
-- **Alertas Inteligentes**: Sistema de notificações por criticidade
-- **Telemetria Avançada**: Gráficos de temperatura, combustível e velocidade
-- **Design Responsivo**: Interface otimizada para desktop e mobile
-- **TypeScript**: Código type-safe e manutenível
+- **⚡ Monitoramento em Tempo Real**: Simulação de dados de embarcações com atualizações automáticas
+- **🗺️ Mapas Interativos**: Visualização oceânica com React-Leaflet e posicionamento preciso
+- **🚨 Central de Alertas**: Sistema inteligente de notificações com resolução e filtros
+- **📊 Telemetria Avançada**: Gráficos dinâmicos com filtros temporais usando Recharts
+- **📱 Design Responsivo**: Interface otimizada para todos os dispositivos
+- **🎯 TypeScript**: Código 100% tipado e manutenível
+- **🎨 UI/UX Profissional**: Design clean com ícones Lucide e sem emojis
 
-## 🚀 Tecnologias
+## 🚀 Stack Tecnológica
 
-- **Frontend**: Next.js 15 + TypeScript
+- **Framework**: Next.js 15 com App Router e Turbopack
+- **Linguagem**: TypeScript
 - **Estilização**: Tailwind CSS
-- **Mapas**: React-Leaflet
+- **Mapas**: React-Leaflet + OpenStreetMap
 - **Gráficos**: Recharts
 - **Ícones**: Lucide React
-- **Datas**: date-fns
-- **Deploy**: Vercel
+- **Utilitários**: date-fns para manipulação de datas
+- **Deploy**: Vercel Ready
 
 ## 📦 Instalação e Execução
+
+### Pré-requisitos
+
+- Node.js 18+
+- npm ou yarn
+
+### Configuração do Projeto
 
 ```bash
 # Clone o repositório
@@ -37,102 +46,159 @@ cd maritime-dashboard
 # Instale as dependências
 npm install
 
-# Execute o projeto
+# Execute o servidor de desenvolvimento
 npm run dev
 ```
 
-O projeto estará disponível em `http://localhost:3000`
+🌐 **Acesse**: `http://localhost:3000`
 
-## 🏗️ Estrutura do Projeto
-
-```
-src/
-├── app/                 # Pages do Next.js App Router
-├── components/          # Componentes React reutilizáveis
-│   ├── Map.tsx         # Mapa interativo com embarcações
-│   ├── AlertPanel.tsx  # Painel de alertas
-│   └── TelemetryChart.tsx # Gráficos de telemetria
-├── data/               # Dados simulados
-│   └── ships.json      # Embarcações, telemetria e alertas
-├── hooks/              # Custom React Hooks
-│   └── useMaritimeData.ts # Hook para gerenciar dados marítimos
-├── lib/                # Utilitários
-│   └── utils.ts        # Funções auxiliares
-└── types/              # Definições TypeScript
-    └── maritime.ts     # Tipos para dados marítimos
-```
-
-## 🔧 Scripts Disponíveis
+### Scripts Disponíveis
 
 ```bash
-npm run dev          # Servidor de desenvolvimento
-npm run build        # Build de produção
+npm run dev          # Servidor desenvolvimento (Turbopack)
+npm run build        # Build de produção otimizado
 npm run start        # Servidor de produção
-npm run lint         # Verificação de código
+npm run lint         # ESLint para verificação de código
 ```
 
-## 📊 Funcionalidades Planejadas
+## 🏗️ Arquitetura do Projeto
 
-### 🗺️ Mapa Interativo
+```
+maritime-dashboard/
+├── 📁 src/
+│   ├── 📁 app/                    # Next.js App Router
+│   │   ├── layout.tsx             # Layout global
+│   │   ├── page.tsx               # Dashboard principal
+│   │   └── globals.css            # Estilos globais
+│   ├── 📁 components/             # Componentes React
+│   │   ├── Map.tsx               # Mapa interativo com embarcações
+│   │   ├── AlertPanel.tsx        # Central de alertas com resolução
+│   │   ├── TelemetryChart.tsx    # Gráficos de telemetria
+│   │   ├── DashboardStats.tsx    # Estatísticas da frota
+│   │   ├── ShipFilters.tsx       # Filtros de embarcações
+│   │   └── Notifications.tsx     # Sistema de notificações
+│   ├── 📁 data/                   # Dados simulados
+│   │   └── ships.json            # Dataset completo
+│   ├── 📁 hooks/                  # Custom Hooks
+│   │   └── useMaritimeData.ts    # Gerenciamento de estado
+│   ├── 📁 lib/                    # Utilitários
+│   │   └── utils.ts              # Funções auxiliares
+│   └── 📁 types/                  # Definições TypeScript
+│       └── maritime.ts           # Tipos do domínio marítimo
+├── 📁 public/                     # Assets estáticos
+└── 📄 Arquivos de configuração   # Next.js, TypeScript, Tailwind
+```
 
-- Visualização de embarcações em tempo real
-- Markers coloridos por status (ativo, crítico, aviso, manutenção)
-- Popups com informações detalhadas
-- Controles de zoom e navegação
+## 🔧 Funcionalidades Implementadas
 
-### 🚨 Sistema de Alertas
+### 🗺️ **Mapa Marítimo Interativo**
 
-- Classificação por criticidade (crítico, aviso, info)
-- Filtragem por tipo e status
-- Timestamps e descrições detalhadas
-- Badge indicators por prioridade
+- ✅ Visualização oceânica com OpenStreetMap
+- ✅ Posicionamento real de embarcações em águas do Atlântico
+- ✅ Markers dinâmicos com cores por status
+- ✅ Popups informativos com detalhes das embarcações
+- ✅ Controles de zoom e navegação fluidos
 
-### 📈 Telemetria
+### 🚨 **Central de Alertas Profissional**
 
-- Gráficos de temperatura do motor
-- Monitoramento de combustível
-- Histórico de velocidade
-- Seleção de período temporal
+- ✅ Classificação por criticidade (Crítico, Aviso, Info)
+- ✅ Sistema de resolução de alertas
+- ✅ Contadores dinâmicos em tempo real
+- ✅ Interface clean com ícones Lucide
+- ✅ Sincronização com status da frota
+- ✅ Layout responsivo otimizado
 
-### 🎛️ Dashboard Principal
+### � **Telemetria e Gráficos**
 
-- Overview consolidado de todas as embarcações
-- Estatísticas em tempo real
-- Interface responsiva e intuitiva
-- Tema moderno com Tailwind CSS
+- ✅ Gráficos de linha para temperatura do motor
+- ✅ Monitoramento de nível de combustível
+- ✅ Histórico de velocidade das embarcações
+- ✅ Filtros temporais (1h, 6h, 12h, 24h)
+- ✅ Recharts com animações suaves
+- ✅ Cores diferenciadas por embarcação
 
-## 🔄 Dados Simulados
+### 🎛️ **Dashboard Central**
 
-O projeto utiliza dados fictícios para demonstração:
+- ✅ Overview consolidado da frota
+- ✅ Estatísticas em tempo real
+- ✅ Cards informativos com métricas
+- ✅ Layout responsivo para mobile/desktop
+- ✅ Filtros avançados de embarcações
+- ✅ Sistema de notificações
 
-- **5 embarcações** com diferentes tipos e status
-- **Telemetria** com histórico de 2 horas
-- **Alertas** de diferentes criticidades
-- **Dados meteorológicos** para principais portos brasileiros
+### 🔄 **Simulação de Dados Realistas**
 
-## 👨‍💻 Status do Desenvolvimento
+- ✅ **5 embarcações** com características únicas
+- ✅ **Telemetria temporal** com dados de 2 horas
+- ✅ **Alertas dinâmicos** de diferentes criticidades
+- ✅ **Posicionamento oceânico** preciso
+- ✅ **Atualizações em tempo real** simuladas
 
-✅ **Concluído:**
+## 🎯 Destaques Técnicos
 
-- Configuração do projeto Next.js + TypeScript + Tailwind
-- Estrutura de dados simulados
-- Tipos TypeScript completos
-- Hook customizado para gerenciamento de estado
-- Funções utilitárias
-- Servidor de desenvolvimento rodando
+### 🏗️ **Arquitetura Moderna**
 
-🔄 **Em Desenvolvimento:**
+- **Next.js 15** com App Router e Turbopack para performance
+- **TypeScript** com tipagem completa do domínio marítimo
+- **Tailwind CSS** com design system consistente
+- **Component-driven development** com reutilização
 
-- Componentes de interface (Map, AlertPanel, TelemetryChart)
-- Layout do dashboard principal
-- Integração dos componentes
+### 🔄 **Gerenciamento de Estado**
 
-📅 **Próximos Passos:**
+- Custom hook `useMaritimeData` para centralizar lógica
+- Estado compartilhado entre componentes
+- Simulação de dados em tempo real
+- Callbacks para comunicação entre componentes
 
-- Implementação dos componentes visuais
-- Testes e otimizações
-- Deploy na Vercel
+### 🎨 **UI/UX Excellence**
+
+- Interface limpa e profissional
+- Responsividade para todos os dispositivos
+- Ícones consistentes (Lucide React)
+- Feedback visual imediato para ações do usuário
+
+### ⚡ **Performance**
+
+- Otimizações de re-render com React
+- Lazy loading de componentes pesados
+- Build otimizado para produção
+- Componentes puros para evitar re-renders desnecessários
+
+## 📸 Preview
+
+O dashboard inclui:
+
+1. **�️ Mapa Principal**: Embarcações posicionadas em oceano real
+2. **📊 Painel de Telemetria**: Gráficos interativos e filtros temporais
+3. **🚨 Central de Alertas**: Sistema completo de gerenciamento
+4. **📈 Estatísticas**: Métricas da frota em tempo real
+5. **🔍 Filtros**: Busca e filtros avançados de embarcações
+
+## 🚀 Status do Projeto
+
+✅ **100% Concluído:**
+
+- ✅ Configuração completa Next.js 15 + TypeScript
+- ✅ Estrutura de dados marítimos simulados
+- ✅ Sistema de tipos TypeScript robusto
+- ✅ Hook customizado de gerenciamento de estado
+- ✅ Todos os componentes funcionais implementados
+- ✅ Layout responsivo e profissional
+- ✅ Sistema de alertas com resolução
+- ✅ Sincronização de estado entre componentes
+- ✅ Servidor de desenvolvimento operacional
+- ✅ Build de produção funcional
+
+🎯 **Pronto para Deploy:**
+
+- ✅ Código production-ready
+- ✅ Performance otimizada
+- ✅ Interface responsiva
+- ✅ Dados simulados realistas
+- ✅ Funcionalidades completas
 
 ---
 
-_Projeto desenvolvido como demonstração técnica para vaga de Frontend Developer Pleno na Oceanpact_
+**💼 Projeto desenvolvido como demonstração técnica de habilidades em desenvolvimento frontend moderno**
+
+_Tecnologias: Next.js 15, TypeScript, Tailwind CSS, React-Leaflet, Recharts_
