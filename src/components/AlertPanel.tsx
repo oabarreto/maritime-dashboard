@@ -277,7 +277,7 @@ export default function AlertPanel({
                           }`}
                         >
                           {alert.type === "critical"
-                            ? "CRÍT"
+                            ? "CRÍTICO"
                             : alert.type === "warning"
                             ? "AVISO"
                             : "INFO"}

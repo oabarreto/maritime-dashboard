@@ -169,7 +169,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-3 sm:p-6 mt-4 sm:mt-6">
+          <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-3 sm:p-6 mt-4 mb-6 sm:mt-6">
             <h3 className="text-sm sm:text-lg font-semibold text-gray-900 flex items-center gap-2 mb-3 sm:mb-6">
               <ShipWheel className="w-4 sm:w-5 h-4 sm:h-5 text-blue-500" />
               Status da Frota
