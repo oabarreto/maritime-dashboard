@@ -23,7 +23,7 @@
 
 <div align="center">
   <a href="https://navscope-maritime-dashboard.vercel.app/" target="_blank">
-    <img src="https://images.unsplash.com/photo-1521547418266-6ca28caa6ac4?w=800&h=450&fit=crop&crop=center" alt="NavScope Dashboard Preview" width="100%" style="border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);" />
+    <img src="https://api.screenshotapi.net/screenshot?token=free&url=https://navscope-maritime-dashboard.vercel.app/&width=1200&height=675&fresh=true" alt="NavScope Dashboard - Monitoramento Marítimo em Tempo Real" width="100%" style="border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);" />
   </a>
   
   **🔗 [Ver Demo Live →](https://navscope-maritime-dashboard.vercel.app/)**
