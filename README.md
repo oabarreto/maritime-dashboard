@@ -1,20 +1,20 @@
-# 🌊 Maritime Dashboard
+# ⚓ NavScope
 
-Dashboard profissional para monitoramento marítimo em tempo real, desenvolvido com Next.js 15, TypeScript e Tailwind CSS.
+Plataforma profissional de monitoramento marítimo inteligente em tempo real, desenvolvida com Next.js 15, TypeScript e Tailwind CSS.
 
 ## 🎯 Sobre o Projeto
 
-Sistema completo de monitoramento naval com interface moderna e responsiva, criado como projeto showcase para demonstração de habilidades técnicas. O dashboard simula operações marítimas reais com dados em tempo real.
+Sistema completo de monitoramento naval com interface moderna e responsiva, criado como projeto showcase para demonstração de habilidades técnicas. A plataforma simula operações marítimas reais com visualização de dados em tempo real.
 
 ### ✨ Características Principais
 
-- **⚡ Monitoramento em Tempo Real**: Simulação de dados de embarcações com atualizações automáticas
-- **🗺️ Mapas Interativos**: Visualização oceânica com React-Leaflet e posicionamento preciso
+- **⚡ Monitoramento Inteligente**: Simulação de dados de embarcações com atualizações automáticas
+- **🗺️ Mapas Oceânicos Interativos**: Visualização marítima com React-Leaflet e posicionamento preciso
 - **🚨 Central de Alertas**: Sistema inteligente de notificações com resolução e filtros
 - **📊 Telemetria Avançada**: Gráficos dinâmicos com filtros temporais usando Recharts
 - **📱 Design Responsivo**: Interface otimizada para todos os dispositivos
 - **🎯 TypeScript**: Código 100% tipado e manutenível
-- **🎨 UI/UX Profissional**: Design clean com ícones Lucide e sem emojis
+- **🎨 UI/UX Profissional**: Design clean com ícones Lucide e estética profissional
 
 ## 🚀 Stack Tecnológica
 

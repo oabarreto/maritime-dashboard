@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Maritime Dashboard Favicon Generator</title>
+  </head>
+  <body>
+    <canvas
+      id="canvas"
+      width="32"
+      height="32"
+      style="
+        border: 1px solid #ccc;
+        image-rendering: pixelated;
+        width: 128px;
+        height: 128px;
+      "
+    ></canvas>
+
+    <script>
+      const canvas = document.getElementById("canvas");
+      const ctx = canvas.getContext("2d");
+
+      // Fundo azul marinho
+      ctx.fillStyle = "#1e40af";
+      ctx.fillRect(0, 0, 32, 32);
+
+      // Ondas do mar (parte inferior)
+      ctx.fillStyle = "#3b82f6";
+      ctx.beginPath();
+      ctx.moveTo(0, 24);
+      ctx.quadraticCurveTo(8, 20, 16, 24);
+      ctx.quadraticCurveTo(24, 28, 32, 24);
+      ctx.lineTo(32, 32);
+      ctx.lineTo(0, 32);
+      ctx.fill();
+
+      // Navio (forma simplificada)
+      ctx.fillStyle = "#ffffff";
+      // Casco do navio
+      ctx.fillRect(8, 18, 16, 4);
+      ctx.fillRect(10, 16, 12, 2);
+
+      // Mastro
+      ctx.fillRect(15, 8, 2, 10);
+
+      // Vela
+      ctx.fillStyle = "#f1f5f9";
+      ctx.fillRect(17, 10, 6, 6);
+
+      // Bandeira no topo
+      ctx.fillStyle = "#ef4444";
+      ctx.fillRect(17, 8, 4, 2);
+
+      // Criar download do favicon
+      canvas.toBlob(function (blob) {
+        const link = document.createElement("a");
+        link.download = "favicon.ico";
+        link.href = URL.createObjectURL(blob);
+        document.body.appendChild(link);
+        console.log(
+          "Canvas criado! Clique com botão direito para salvar como imagem."
+        );
+      });
+    </script>
+  </body>
+</html>

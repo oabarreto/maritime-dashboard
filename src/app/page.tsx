@@ -10,7 +10,6 @@ import {
   AlertTriangle,
   Activity,
   RefreshCw,
-  Waves,
   Navigation,
   Users,
   ShipWheel,
@@ -88,15 +87,19 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between py-4 sm:py-0 sm:h-16 gap-4 sm:gap-0">
             <div className="flex items-center gap-3">
-              <div className="p-2 bg-blue-600 rounded-lg">
-                <Waves className="w-6 h-6 text-white" />
+              <div className="relative">
+                <img
+                  src="/favicon.svg"
+                  alt="NavScope"
+                  className="w-8 h-8 rounded-md"
+                />
               </div>
               <div>
                 <h1 className="text-lg sm:text-xl font-bold text-gray-900">
-                  Maritime Dashboard
+                  NavScope
                 </h1>
                 <p className="text-xs sm:text-sm text-gray-500">
-                  Monitoramento em Tempo Real
+                  Monitoramento Marítimo Inteligente
                 </p>
               </div>
             </div>
@@ -104,7 +107,7 @@ export default function Home() {
               <button
                 onClick={refreshData}
                 disabled={isLoading}
-                className="flex items-center justify-center gap-2 px-3 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 transition-colors w-full sm:w-auto text-sm"
+                className="flex items-center justify-center gap-2 px-3 py-2 bg-blue-800 text-white rounded-lg hover:bg-blue-900 disabled:opacity-50 transition-colors w-full sm:w-auto text-sm"
               >
                 <RefreshCw
                   className={`w-4 h-4 ${isLoading ? "animate-spin" : ""}`}
