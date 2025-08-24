@@ -79,6 +79,7 @@ export const useMaritimeData = () => {
       });
     }, 60000);
     return () => clearInterval(interval);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   const getActiveAlerts = (): Alert[] => {
     return data.alerts.filter((alert) => !alert.resolved);

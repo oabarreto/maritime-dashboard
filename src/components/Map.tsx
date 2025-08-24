@@ -32,6 +32,7 @@ interface MapProps {
 }
 const createShipIcon = (ship: Ship) => {
   if (typeof window === "undefined") return null;
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
   const L = require("leaflet");
   const iconHtml = `
     <div class="relative">
@@ -61,7 +62,6 @@ const createShipIcon = (ship: Ship) => {
 };
 export default function Map({
   ships,
-  selectedShip,
   onShipSelect,
   className,
 }: MapProps) {

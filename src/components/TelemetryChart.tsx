@@ -1,7 +1,6 @@
 "use client";
 import { useState } from "react";
 import {
-  LineChart,
   Line,
   XAxis,
   YAxis,
@@ -88,6 +87,7 @@ export default function TelemetryChart({
       currentValue > currentConfig.criticalThreshold) ||
       (selectedMetric === "fuelLevel" &&
         currentValue < currentConfig.criticalThreshold));
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-vars
   const CustomTooltip = ({ active, payload, label }: any) => {
     if (active && payload && payload.length) {
       const data = payload[0].payload;

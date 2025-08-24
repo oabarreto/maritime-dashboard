@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -11,6 +11,13 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#2563eb",
+  colorScheme: "light",
+};
 
 export const metadata: Metadata = {
   title: {
@@ -34,7 +41,6 @@ export const metadata: Metadata = {
   creator: "NavScope Team",
   publisher: "NavScope Technologies",
   robots: "index, follow",
-  viewport: "width=device-width, initial-scale=1",
   icons: {
     icon: [
       { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
@@ -45,8 +51,6 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   manifest: "/site.webmanifest",
-  themeColor: "#2563eb",
-  colorScheme: "light",
   openGraph: {
     title: "Maritime Dashboard - Monitoramento Naval",
     description: "Sistema profissional de monitoramento marítimo em tempo real",

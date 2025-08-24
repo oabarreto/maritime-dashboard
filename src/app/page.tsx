@@ -1,10 +1,10 @@
 "use client";
 import { useState } from "react";
+import Image from "next/image";
 import { useMaritimeData } from "@/hooks/useMaritimeData";
 import Map from "@/components/Map";
 import AlertPanel from "@/components/AlertPanel";
 import TelemetryChart from "@/components/TelemetryChart";
-import { Ship } from "@/types/maritime";
 import {
   Ship as ShipIcon,
   AlertTriangle,
@@ -24,8 +24,6 @@ export default function Home() {
     isLoading,
     setSelectedShip,
     setSelectedTimeRange,
-    getActiveAlerts,
-    getCriticalAlerts,
     getShipsByStatus,
     getShipTelemetry,
     refreshData,
@@ -49,7 +47,6 @@ export default function Home() {
   );
 
   const activeShips = getShipsByStatus("active");
-  const criticalShips = getShipsByStatus("critical");
   const stats = [
     {
       label: "Embarcações Monitoradas",
@@ -87,9 +84,11 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between py-4 sm:py-0 sm:h-16 gap-4 sm:gap-0">
             <div className="flex items-center gap-3">
               <div className="relative">
-                <img
+                <Image
                   src="/favicon.svg"
                   alt="NavScope"
+                  width={32}
+                  height={32}
                   className="w-8 h-8 rounded-md"
                 />
               </div>
