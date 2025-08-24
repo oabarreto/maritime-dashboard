@@ -11,7 +11,6 @@ import {
   Activity,
   RefreshCw,
   Navigation,
-  Users,
   ShipWheel,
   TrendingUp,
 } from "lucide-react";
