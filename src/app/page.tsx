@@ -286,7 +286,6 @@ export default function Home() {
             </h3>
           </div>
 
-          {/* Mobile Card Layout */}
           <div className="block sm:hidden">
             <div className="divide-y divide-gray-200">
               {data.ships.map((ship) => (
@@ -361,7 +360,6 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Desktop Table Layout */}
           <div className="hidden sm:block overflow-x-auto">
             <table className="w-full">
               <thead className="bg-gray-50">

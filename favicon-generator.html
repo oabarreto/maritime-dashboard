@@ -21,11 +21,9 @@
       const canvas = document.getElementById("canvas");
       const ctx = canvas.getContext("2d");
 
-      // Fundo azul marinho
       ctx.fillStyle = "#1e40af";
       ctx.fillRect(0, 0, 32, 32);
 
-      // Ondas do mar (parte inferior)
       ctx.fillStyle = "#3b82f6";
       ctx.beginPath();
       ctx.moveTo(0, 24);
@@ -35,24 +33,18 @@
       ctx.lineTo(0, 32);
       ctx.fill();
 
-      // Navio (forma simplificada)
       ctx.fillStyle = "#ffffff";
-      // Casco do navio
       ctx.fillRect(8, 18, 16, 4);
       ctx.fillRect(10, 16, 12, 2);
 
-      // Mastro
       ctx.fillRect(15, 8, 2, 10);
 
-      // Vela
       ctx.fillStyle = "#f1f5f9";
       ctx.fillRect(17, 10, 6, 6);
 
-      // Bandeira no topo
       ctx.fillStyle = "#ef4444";
       ctx.fillRect(17, 8, 4, 2);
 
-      // Criar download do favicon
       canvas.toBlob(function (blob) {
         const link = document.createElement("a");
         link.download = "favicon.ico";
