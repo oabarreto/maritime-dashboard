@@ -60,11 +60,7 @@ const createShipIcon = (ship: Ship) => {
     popupAnchor: [0, -16],
   });
 };
-export default function Map({
-  ships,
-  onShipSelect,
-  className,
-}: MapProps) {
+export default function Map({ ships, onShipSelect, className }: MapProps) {
   const [isClient, setIsClient] = useState(false);
   const [mapCenter] = useState<[number, number]>([-25.0, -45.0]);
   const [mapZoom] = useState(6);

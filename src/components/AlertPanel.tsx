@@ -1,9 +1,7 @@
 "use client";
 import { useState } from "react";
 import { Alert, Ship } from "@/types/maritime";
-import {
-  formatTimestamp,
-} from "@/lib/utils";
+import { formatTimestamp } from "@/lib/utils";
 import { AlertTriangle, Info, XCircle } from "lucide-react";
 
 interface AlertPanelProps {
