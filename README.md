@@ -25,7 +25,8 @@
   <a href="https://navscope-maritime-dashboard.vercel.app/" target="_blank">
     <div>
     <img width="1289" height="1264" alt="image" src="https://github.com/user-attachments/assets/81410a9c-046e-4711-8ea5-b4aa6b83e7a5" />
-    <img width="1289" height="1264" alt="image" src="https://github.com/user-attachments/assets/39172270-c2bb-4e90-a754-3a7a766510a5" />
+    <img width="1334" height="1260" alt="image" src="https://github.com/user-attachments/assets/33932bbb-7000-47a4-b413-b1ee2a1d70b6" />
+
     </div>
   </a>
   
