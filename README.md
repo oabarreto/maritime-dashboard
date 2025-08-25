@@ -46,9 +46,12 @@ Sistema profissional de dashboard para visualização e monitoramento de embarca
 
 ### ✨ Funcionalidades
 
-🗺️ **Mapa interativo** com posicionamento de embarcações no oceano  
+� **Sistema de autenticação** com login demo e modo visitante  
+�🗺️ **Mapa interativo** com posicionamento de embarcações no oceano  
 🚨 **Painel de alertas** com diferentes níveis de criticidade  
 📊 **Gráficos de telemetria** (temperatura, combustível, velocidade)  
+👤 **Gestão de usuários** com informações do perfil logado  
+🎯 **Interface intuitiva** com detalhes expandidos das embarcações  
 📱 **Interface responsiva** para desktop e mobile  
 ⚡ **Dados simulados** atualizados em tempo real  
 🎨 **Design system** consistente e profissional
@@ -61,7 +64,7 @@ Sistema profissional de dashboard para visualização e monitoramento de embarca
 | ---------- | ---------------- | ------------- | ---------- |
 | Next.js 15 | Tailwind CSS     | Leaflet       | TypeScript |
 | React 19   | PostCSS          | Recharts      | ESLint     |
-| App Router | CSS Grid/Flexbox | OpenStreetMap | Vercel     |
+| App Router | CSS Grid/Flexbox | OpenStreetMap | Prettier   |
 
 ---
 
@@ -92,11 +95,17 @@ src/
 ├── app/              # App Router (Next.js 15)
 │   ├── layout.tsx    # Layout global + metadata
 │   ├── page.tsx      # Dashboard principal
+│   ├── login/        # Sistema de autenticação
+│   │   └── page.tsx  # Página de login
 │   └── globals.css   # Estilos globais
 ├── components/       # Componentes reutilizáveis
 │   ├── Map.tsx       # Mapa interativo Leaflet
 │   ├── AlertPanel.tsx # Sistema de alertas
-│   └── TelemetryChart.tsx # Gráficos telemetria
+│   ├── TelemetryChart.tsx # Gráficos telemetria
+│   ├── AuthGuard.tsx # Proteção de rotas
+│   └── UserInfo.tsx  # Informações do usuário
+├── contexts/         # Contextos React
+│   └── AuthContext.tsx # Gerenciamento de autenticação
 ├── data/            # Dados simulados
 ├── hooks/           # Custom hooks React
 ├── lib/             # Utilitários e helpers
@@ -118,11 +127,13 @@ npm run lint   # Verificação código
 
 ## 🌟 Destaques
 
-- **⚡ Performance:** Build otimizado (270kB) com pre-rendering
+- **🔐 Autenticação:** Sistema completo com login demo e proteção de rotas
+- **⚡ Performance:** Build otimizado (270kB) com pre-rendering SSR
 - **🎨 Design:** Interface moderna inspirada em dashboards profissionais
-- **📱 Responsivo:** Adaptável a todos os tamanhos de tela
+- **📱 Responsivo:** Adaptável a todos os tamanhos de tela com UX otimizada
 - **🔧 TypeScript:** Código 100% tipado para maior confiabilidade
-- **🚀 Deploy:** Zero-config deployment na Vercel
+- **🚀 Deploy:** Zero-config deployment na Vercel com CI/CD
+- **♿ Acessibilidade:** Componentes com foco em usabilidade e contraste
 
 ---
 
@@ -130,12 +141,22 @@ npm run lint   # Verificação código
 
 **🔗 [navscope-maritime-dashboard.vercel.app](https://navscope-maritime-dashboard.vercel.app/)**
 
-Explore todas as funcionalidades:
+### 🔐 Credenciais de Demonstração
 
-- Clique nas embarcações no mapa para ver detalhes
-- Teste os filtros de telemetria (1h, 6h, 12h, 24h)
-- Resolva alertas no painel lateral
-- Navegue pela interface responsiva
+Para acessar o sistema, use as credenciais demo ou continue sem login:
+
+- **Email:** `demo@navscope.com`
+- **Senha:** `demo123`
+- **Ou:** Clique em "Continuar sem Login" para modo visitante
+
+### 🎮 Explore as funcionalidades:
+
+- **Login seguro** com sistema de autenticação completo
+- **Clique nas embarcações** no mapa para ver detalhes expandidos
+- **Teste os filtros** de telemetria (1h, 6h, 12h, 24h)
+- **Resolva alertas** no painel lateral interativo
+- **Navegue pela interface** responsiva em diferentes dispositivos
+- **Atualize dados** em tempo real com o botão de refresh
 
 ---
 
