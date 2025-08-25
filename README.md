@@ -19,6 +19,8 @@
   <img alt="Status" src="https://img.shields.io/badge/Status-Production_Ready-brightgreen?style=flat-square">
 </div>
 
+<br/>
+
 ## 📸 Preview
 
 <div align="center">
