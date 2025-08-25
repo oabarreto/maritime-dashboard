@@ -19,7 +19,7 @@ export default function LoginPage() {
   }, []);
 
   if (!mounted) {
-    return <div></div>; // Evita problemas de hidratação sem mostrar loading
+    return <div></div>;
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -50,7 +50,6 @@ export default function LoginPage() {
   return (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
       <div className="max-w-md w-full bg-white rounded-xl shadow-lg p-8">
-        {/* Logo NavScope */}
         <div className="text-center mb-8">
           <div className="w-20 h-20 bg-gradient-to-br from-blue-600 to-blue-700 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
             <Image
@@ -65,7 +64,6 @@ export default function LoginPage() {
           <p className="text-gray-600">Monitoramento Marítimo Inteligente</p>
         </div>
 
-        {/* Caixa de Demonstração Melhorada */}
         <div className="mb-6 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl border border-blue-200 overflow-hidden">
           <div className="bg-blue-600 px-4 py-2">
             <div className="flex items-center gap-2">

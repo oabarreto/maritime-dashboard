@@ -91,12 +91,12 @@ export default function AlertPanel({
 
   return (
     <div
-      className={`bg-white rounded-lg shadow-lg border border-gray-200 flex flex-col ${className}`}
+      className={`bg-white rounded-lg shadow-lg border border-gray-200 flex flex-col min-h-[600px] ${className}`}
     >
-      <div className="p-2 sm:p-3 border-b border-gray-200 bg-gradient-to-r from-orange-50 to-red-50">
-        <div className="flex items-center justify-between mb-2 sm:mb-3">
+      <div className="p-4 sm:p-5 border-b border-gray-200 bg-gradient-to-r from-orange-50 to-red-50">
+        <div className="flex items-center justify-between mb-4">
           <div className="flex-1 min-w-0">
-            <h2 className="text-sm sm:text-lg font-bold text-gray-900 flex items-center gap-1 sm:gap-2">
+            <h2 className="text-base sm:text-lg font-bold text-gray-900 flex items-center gap-2">
               <AlertTriangle className="w-4 sm:w-5 h-4 sm:h-5 text-amber-500 shrink-0" />
               <span className="truncate">Central de Alertas</span>
             </h2>
@@ -112,26 +112,26 @@ export default function AlertPanel({
           </div>
         </div>
 
-        <div className="grid grid-cols-4 gap-1 mb-2 sm:mb-3">
-          <div className="bg-white rounded p-1 sm:p-2 text-center border border-red-200">
+        <div className="grid grid-cols-4 gap-2 mb-4">
+          <div className="bg-white rounded p-2 sm:p-3 text-center border border-red-200">
             <div className="text-xs sm:text-sm font-bold text-red-600">
               {alertCounts.critical}
             </div>
             <div className="text-xs text-gray-600">Críticos</div>
           </div>
-          <div className="bg-white rounded p-1 sm:p-2 text-center border border-yellow-200">
+          <div className="bg-white rounded p-2 sm:p-3 text-center border border-yellow-200">
             <div className="text-xs sm:text-sm font-bold text-yellow-600">
               {alertCounts.warning}
             </div>
             <div className="text-xs text-gray-600">Avisos</div>
           </div>
-          <div className="bg-white rounded p-1 sm:p-2 text-center border border-blue-200">
+          <div className="bg-white rounded p-2 sm:p-3 text-center border border-blue-200">
             <div className="text-xs sm:text-sm font-bold text-blue-600">
               {alertCounts.info}
             </div>
             <div className="text-xs text-gray-600">Info</div>
           </div>
-          <div className="bg-white rounded p-1 sm:p-2 text-center border border-gray-200">
+          <div className="bg-white rounded p-2 sm:p-3 text-center border border-gray-200">
             <div className="text-xs sm:text-sm font-bold text-gray-600">
               {alertCounts.total}
             </div>
@@ -204,14 +204,14 @@ export default function AlertPanel({
       </div>
 
       <div
-        className="flex-1 overflow-y-auto p-1 sm:p-2"
+        className="flex-1 overflow-y-auto p-2 sm:p-3"
         style={{
-          minHeight: "200px",
-          maxHeight: "calc(100% - 180px)",
+          minHeight: "300px",
+          maxHeight: "calc(100% - 200px)",
         }}
       >
         {sortedAlerts.length === 0 ? (
-          <div className="p-4 sm:p-8 text-center">
+          <div className="p-6 sm:p-8 text-center">
             <div className="bg-green-100 rounded-full w-12 sm:w-16 h-12 sm:h-16 flex items-center justify-center mx-auto mb-4">
               <Info className="w-6 sm:w-8 h-6 sm:h-8 text-green-600" />
             </div>
@@ -235,7 +235,7 @@ export default function AlertPanel({
             {sortedAlerts.map((alert) => (
               <div
                 key={alert.id}
-                className={`p-2 sm:p-3 cursor-pointer transition-all duration-200 border-l-4 ${
+                className={`p-3 sm:p-4 cursor-pointer transition-all duration-200 border-l-4 ${
                   selectedAlert?.id === alert.id
                     ? "bg-blue-50 border-l-blue-500 shadow-md"
                     : "bg-white border-l-transparent hover:bg-gray-50 hover:border-l-gray-200"

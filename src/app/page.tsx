@@ -84,7 +84,7 @@ export default function Home() {
       <div className="min-h-screen bg-gray-50">
         <header className="bg-white shadow-sm border-b border-gray-200">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between py-4 sm:py-0 sm:h-16 gap-4 sm:gap-0">
+            <div className="flex items-center justify-between py-3 sm:py-4 min-h-[64px]">
               <div className="flex items-center gap-3">
                 <div className="relative">
                   <Image
@@ -104,32 +104,39 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 w-full sm:w-auto">
-                <button
-                  onClick={refreshData}
-                  disabled={isLoading}
-                  className="flex items-center justify-center gap-2 px-3 py-2 bg-blue-800 text-white rounded-lg hover:bg-blue-900 disabled:opacity-50 transition-colors w-full sm:w-auto text-sm"
-                >
-                  <RefreshCw
-                    className={`w-4 h-4 ${isLoading ? "animate-spin" : ""}`}
-                  />
-                  {isLoading ? "Atualizando..." : "Atualizar"}
-                </button>
-                <div className="text-left sm:text-right">
-                  <p className="text-sm font-medium text-gray-900">
-                    {new Date().toLocaleTimeString("pt-BR")}
-                  </p>
-                  <p className="text-xs text-gray-500">
-                    {new Date().toLocaleDateString("pt-BR")}
-                  </p>
+
+              <div className="flex items-center gap-2 sm:gap-4">
+                <div className="flex items-center gap-2 sm:gap-3">
+                  <button
+                    onClick={refreshData}
+                    disabled={isLoading}
+                    className="flex items-center justify-center gap-1 sm:gap-2 px-3 sm:px-4 py-2.5 sm:py-2 bg-blue-800 text-white rounded-lg hover:bg-blue-900 disabled:opacity-50 transition-colors text-sm font-medium shadow-sm"
+                  >
+                    <RefreshCw
+                      className={`w-4 h-4 ${isLoading ? "animate-spin" : ""}`}
+                    />
+                    <span className="hidden sm:inline">
+                      {isLoading ? "Atualizando..." : "Atualizar"}
+                    </span>
+                  </button>
+
+                  <div className="hidden sm:block text-right">
+                    <p className="text-sm font-medium text-gray-900">
+                      {new Date().toLocaleTimeString("pt-BR")}
+                    </p>
+                    <p className="text-xs text-gray-500">
+                      {new Date().toLocaleDateString("pt-BR")}
+                    </p>
+                  </div>
                 </div>
+
                 <UserInfo />
               </div>
             </div>
           </div>
         </header>
-        <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-6 sm:mb-8">
+        <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-4 sm:mb-6">
             {stats.map((stat, index) => (
               <div
                 key={index}
@@ -218,16 +225,16 @@ export default function Home() {
             {selectedShip && (
               <div className="space-y-6">
                 <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-4 sm:p-6">
-                  <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-4 sm:mb-6 gap-3 sm:gap-0">
-                    <h3 className="text-lg sm:text-xl font-semibold text-gray-900 flex items-center gap-2">
-                      <Navigation className="w-5 sm:w-6 h-5 sm:h-6 text-blue-500" />
-                      <span className="break-all sm:break-normal">
+                  <div className="flex items-center justify-between mb-4 sm:mb-6">
+                    <h3 className="text-lg sm:text-xl font-semibold text-gray-900 flex items-center gap-2 flex-1 min-w-0">
+                      <Navigation className="w-5 sm:w-6 h-5 sm:h-6 text-blue-500 shrink-0" />
+                      <span className="truncate">
                         Detalhes: {selectedShip.name}
                       </span>
                     </h3>
                     <button
                       onClick={() => setSelectedShip(null)}
-                      className="text-gray-400 hover:text-gray-600 transition-colors p-2 hover:bg-gray-100 rounded-lg self-end sm:self-auto"
+                      className="text-gray-400 hover:text-gray-600 transition-colors p-2 hover:bg-gray-100 rounded-lg ml-2 shrink-0"
                     >
                       ✕
                     </button>
@@ -293,12 +300,12 @@ export default function Home() {
                 {data.ships.map((ship) => (
                   <div
                     key={ship.id}
-                    className={`p-4 hover:bg-gray-50 cursor-pointer ${
+                    className={`p-4 hover:bg-gray-50 cursor-pointer transition-colors ${
                       selectedShip?.id === ship.id ? "bg-blue-50" : ""
                     }`}
                     onClick={() => setSelectedShip(ship)}
                   >
-                    <div className="flex items-start justify-between mb-2">
+                    <div className="flex items-start justify-between mb-3">
                       <div className="flex items-center gap-3">
                         <div
                           className={`w-3 h-3 rounded-full ${
@@ -310,10 +317,12 @@ export default function Home() {
                           }`}
                         ></div>
                         <div>
-                          <p className="font-medium text-gray-900 text-sm">
+                          <p className="font-semibold text-gray-900 text-sm">
                             {ship.name}
                           </p>
-                          <p className="text-xs text-gray-500">{ship.type}</p>
+                          <p className="text-xs text-gray-600 font-medium">
+                            {ship.type}
+                          </p>
                         </div>
                       </div>
                       <span
@@ -341,23 +350,27 @@ export default function Home() {
                         {ship.status === "maintenance" && "Manutenção"}
                       </span>
                     </div>
-                    <div className="grid grid-cols-2 gap-2 text-xs">
+                    <div className="grid grid-cols-2 gap-3 text-xs">
                       <div>
-                        <span className="text-gray-500">Velocidade:</span>
-                        <span className="ml-1 font-medium">
+                        <span className="text-gray-600 font-medium">
+                          Velocidade:
+                        </span>
+                        <span className="ml-1 font-semibold text-gray-900">
                           {ship.speed.toFixed(1)} nós
                         </span>
                       </div>
                       <div>
-                        <span className="text-gray-500">ETA:</span>
-                        <span className="ml-1 font-medium">
+                        <span className="text-gray-600 font-medium">ETA:</span>
+                        <span className="ml-1 font-semibold text-gray-900">
                           {new Date(ship.eta).toLocaleDateString("pt-BR")}
                         </span>
                       </div>
                     </div>
                     <div className="mt-2 text-xs">
-                      <span className="text-gray-500">Destino:</span>
-                      <span className="ml-1 font-medium">
+                      <span className="text-gray-600 font-medium">
+                        Destino:
+                      </span>
+                      <span className="ml-1 font-semibold text-gray-900">
                         {ship.destination}
                       </span>
                     </div>
@@ -411,10 +424,12 @@ export default function Home() {
                             }`}
                           ></div>
                           <div>
-                            <p className="font-medium text-gray-900">
+                            <p className="font-semibold text-gray-900">
                               {ship.name}
                             </p>
-                            <p className="text-sm text-gray-500">{ship.type}</p>
+                            <p className="text-sm text-gray-600 font-medium">
+                              {ship.type}
+                            </p>
                           </div>
                         </div>
                       </td>
@@ -444,10 +459,10 @@ export default function Home() {
                           {ship.status === "maintenance" && "Manutenção"}
                         </span>
                       </td>
-                      <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-900">
+                      <td className="px-4 py-4 whitespace-nowrap text-sm font-semibold text-gray-900">
                         {ship.speed.toFixed(1)} nós
                       </td>
-                      <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-900">
+                      <td className="px-4 py-4 whitespace-nowrap text-sm font-semibold text-gray-900">
                         {ship.destination}
                       </td>
                       <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-900">
