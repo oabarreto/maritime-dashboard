@@ -23,7 +23,10 @@
 
 <div align="center">
   <a href="https://navscope-maritime-dashboard.vercel.app/" target="_blank">
-    <img width="1265" height="1152" alt="image" src="https://github.com/user-attachments/assets/8efe18f6-66d4-497d-a6c9-bc5b3aff6f85" />
+    <div>
+    <img width="1289" height="1264" alt="image" src="https://github.com/user-attachments/assets/81410a9c-046e-4711-8ea5-b4aa6b83e7a5" />
+    <img width="1289" height="1264" alt="image" src="https://github.com/user-attachments/assets/39172270-c2bb-4e90-a754-3a7a766510a5" />
+    </div>
   </a>
   
   **🔗 [Ver Demo Live →](https://navscope-maritime-dashboard.vercel.app/)**
@@ -46,8 +49,8 @@ Sistema profissional de dashboard para visualização e monitoramento de embarca
 
 ### ✨ Funcionalidades
 
-� **Sistema de autenticação** com login demo e modo visitante  
-�🗺️ **Mapa interativo** com posicionamento de embarcações no oceano  
+ **Sistema de autenticação** com login demo e modo visitante  
+🗺️ **Mapa interativo** com posicionamento de embarcações no oceano  
 🚨 **Painel de alertas** com diferentes níveis de criticidade  
 📊 **Gráficos de telemetria** (temperatura, combustível, velocidade)  
 👤 **Gestão de usuários** com informações do perfil logado  
@@ -114,7 +117,7 @@ src/
 
 ---
 
-## 🎮 Scripts
+##  Scripts
 
 ```bash
 npm run dev    # Desenvolvimento (Turbopack)
@@ -149,7 +152,7 @@ Para acessar o sistema, use as credenciais demo ou continue sem login:
 - **Senha:** `demo123`
 - **Ou:** Clique em "Continuar sem Login" para modo visitante
 
-### 🎮 Explore as funcionalidades:
+###  Explore as funcionalidades:
 
 - **Login seguro** com sistema de autenticação completo
 - **Clique nas embarcações** no mapa para ver detalhes expandidos
